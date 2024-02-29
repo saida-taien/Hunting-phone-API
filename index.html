@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- daisy and tailwind link  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Hunting Phone API</title>
+</head>
+
+<body>
+    <header>
+
+        <!-- title  -->
+        <h1 class="text-6xl text-center underline font-extrabold text-blue-950">HUNTING PHONE</h1>
+
+        <!-- search result -->
+        <section class="m-10 flex justify-center items-center gap-2">
+            <input id="search-field" type="text" placeholder="Search..."
+                class="input input-bordered w-full max-w-xs bg-blue-950 text-white" />
+            <button onclick="handleSearch()" class="btn btn-outline btn-primary">Search</button>
+        </section>
+    </header>
+    <main>
+
+
+
+
+        <!-- search result  -->
+        <section>
+            <!-- spinner or loader  -->
+            <div id="loading-spinner" class="text-center m-32 hidden">
+                <span class="loading loading-infinity loading-lg text-blue-950"></span>
+            </div>
+            <div id="phones-container" class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-9 mx-auto p-6">
+                <!-- <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                    <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div> -->
+            </div>
+
+            <!-- show all button  -->
+            <div id="show-all-container" class="text-center hidden m-6">
+                <button onclick="handleShowMore()" class="btn btn-accent">Show More...</button>
+            </div>
+        </section>
+
+
+
+        <!-- Show Modal section  -->
+
+
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 id="show-detail-phone-name" class="font-bold text-3xl text-center"></h3>
+                <div id="show-details-container">
+
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+
+
+        <!-- no result found section  -->
+        <div id="no-result-section" class="hidden text-center">
+            <h1 class="text-red-600 text-5xl font-semibold p-11 ">NO RESULT FOUND !!!</h1>
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+
+
+    <script src="JS/phone.js"></script>
+</body>
+
+</html>
